@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+echo "Installing git submodules "
+git submodule update --init
+
+# Load libraries
+. submodules/lib/docker.bash
+
+echo "Setting up Docker volumes..."
+setup_volumes.sh
+
+echo "Configuring NPM auth..."
+init_npmrc
+
+echo "Installing project dependencies"
+yarn install --frozen-lockfile
