@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  web:
+    image: ${NODE_IMAGE}
+    volumes:
+      - project:/workdir
+    ports:
+      - "80:8080"
+    environment:
+      LOCAL_USER_ID: $DOCKER_HOST_USER_ID
+    command: yarn start
+
+networks:
+  default:
+    external:
+      name: global
+
+volumes:
+  project:
+    external:
+      name: lit-element-module-poc_project

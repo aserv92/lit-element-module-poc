@@ -11,8 +11,17 @@ git submodule update --init
 echo "Setting up Docker volumes..."
 setup_volumes.sh
 
+echo "Initializing .env"
+dotenv.init
+
 echo "Configuring NPM auth..."
 init_npmrc
 
 echo "Installing project dependencies"
 yarn install --frozen-lockfile
+
+echo "Starting containers"
+containers up -d
+
+echo "Waiting for services to start"
+submodules/bin/init/wait_for_services.sh
