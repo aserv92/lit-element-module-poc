@@ -1,29 +1,10 @@
 <!doctype html>
-<html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <style>
-    body {
-      background: #fafafa;
-    }
-  </style>
-</head>
-<body>
-  <div id="demo"></div>
-
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../dist/src/lit-poc.js';
-
-    const header = 'Hello owc World!';
-    render(
-      html`
-        <lit-poc .header=${header}>
-          some light-dom
-        </lit-poc>
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
-</body>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <script type="module" src="../dist/src/lit-poc.js"></script>
+  </head>
+  <body>
+    <lit-poc header="Hello Andrew 2">Header contents</lit-poc>
+  </body>
 </html>
