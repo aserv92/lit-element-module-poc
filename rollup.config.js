@@ -5,7 +5,6 @@ import summary from 'rollup-plugin-summary';
 
 const _exports = [
   './src/stdcheck-header/StdcheckHeader.ts',
-  './src/stdcheck-header/stdcheck-header.ts',
 ];
 
 const getExports = () => {
