@@ -3,7 +3,7 @@
   "description": "Webcomponent lit-poc following open-wc recommendations",
   "license": "MIT",
   "author": "lit-poc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "start": "concurrently \"rollup -c --watch\" \"wds --watch\"",
