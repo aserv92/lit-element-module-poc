@@ -25,3 +25,6 @@ custom-elements.json
 .env
 
 yarn-error.log
+.rollup.cache/
+
+.npmrc

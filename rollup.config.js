@@ -1,7 +1,7 @@
 import { litScss } from 'rollup-plugin-scss-lit'
 import resolve from '@rollup/plugin-node-resolve';
-import terser from '@rollup/plugin-terser';
 import summary from 'rollup-plugin-summary';
+import typescript from "@rollup/plugin-typescript";
 
 const _exports = [
   './src/stdcheck-header/StdcheckHeader.ts',
@@ -14,7 +14,7 @@ const getExports = () => {
       input: _export,
       output: [{
         file: _export.replace('./src', './dist').replace('.ts', '.js'),
-        format: 'iife',
+        format: 'esm',
         sourcemap: true,
         globals: {
           'lit': 'Lit',
@@ -27,7 +27,7 @@ const getExports = () => {
         exclude: 'node_modules/**',
         chokidar: {
             paths: 'src/**/*',
-            usePolling: false
+            usePolling: true
         }
       },
       plugins: [
@@ -35,14 +35,11 @@ const getExports = () => {
           minify: true,
           options: { loadPaths: ['node_modules'] }
         }),
+        typescript(),
         resolve(),
-        terser({
-          ecma: 2021,
-          module: true,
-          warnings: true,
-        }),
         summary(),
-      ]
+      ],
+      preserveEntrySignatures: 'strict',
     }
   ));
 }
