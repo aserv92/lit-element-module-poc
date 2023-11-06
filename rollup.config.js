@@ -27,7 +27,7 @@ const getConfig = (fileName, minified) => {
     plugins: [
       litScss({
         minify: minified,
-        options: {loadPaths: ['node_modules']}
+        options: {loadPaths: [process.cwd()]},
       }),
       typescript(),
       resolve(),
