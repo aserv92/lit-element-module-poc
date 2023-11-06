@@ -1,8 +1,8 @@
 {
   "name": "lit-element-module-poc",
-  "description": "Webcomponent lit-poc following open-wc recommendations",
+  "description": "This is a POC for using LitElements on other AnalyteHealth projects.",
   "license": "MIT",
-  "author": "lit-poc",
+  "author": "Andrew Servi",
   "version": "0.2.0",
   "type": "module",
   "scripts": {
